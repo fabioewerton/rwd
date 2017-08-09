@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var html = require('gulp-htmlmin');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean-css');
+var notify = require('gulp-notify');
 
 gulp.task('html', function() {
     return gulp.src('_source/index.html')
@@ -11,16 +12,13 @@ gulp.task('html', function() {
 
 gulp.task('sass',['html'], function() {
     return gulp.src('_source/scss/style.scss')
-      .pipe(sass())
+      .pipe(sass(''))
+      .on("error", notify.onError({message: "Error: <%= error.message %>", title: "OPAA..., TEM ALGO ERRADO NO SEU CÓDIGO."}))
       .pipe(clean(''))
-      .pipe(gulp.dest('_dist/css'));
-
+      .pipe(gulp.dest('_dist/css/'));
 });
 
-
-
-
-gulp.task('default',['html', 'sass'], function() {
+gulp.task('default', ['html', 'sass'], function() {
     gulp.watch('_source/index.html', ['html']);
     gulp.watch('_source/scss/**/*.scss', ['sass']);
 });
