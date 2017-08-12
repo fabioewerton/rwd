@@ -1,3 +1,43 @@
 *{
 	box-sizing: border-box;
 }
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+}
+.row:after{
+	content: "";
+	clear: both;
+	display: table;
+}
+.col{
+	float: left;
+	padding: 15px;
+	position: relative;
+	border: solid black 1px;
+}
+.col-1{
+	width: 8.333% * 1;}
+.col-2{
+	width: 8.333% * 2;}
+.col-3{
+	width: 8.333% * 3;}
+.col-4{
+	width: 8.333% * 4;}
+.col-5{
+	width: 8.333% * 5;}
+.col-6{
+	width: 8.333% * 6;}
+.col-7{
+	width: 8.333% * 7;}
+.col-8{
+	width: 8.333% * 8;}
+.col-9{
+	width: 8.333% * 9;}
+.col-10{
+	width: 8.333% * 10;}
+.col-11{
+	width: 8.333% * 11;}
+.col-12{
+	width: 8.333% * 12;}
